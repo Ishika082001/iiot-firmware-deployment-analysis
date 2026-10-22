@@ -1,0 +1,116 @@
+# IIoT Firmware Deployment Reliability Analysis
+
+## Project Overview
+
+This project analyzes Industrial Internet of Things (IIoT) firmware deployment data to evaluate deployment reliability, identify common causes of unsuccessful deployments, compare performance across device types and sites, and examine resolution times by escalation level.
+
+The project simulates an industrial firmware deployment analytics workflow using Python and data visualization techniques.
+
+## Business Problem
+
+Firmware updates are essential for maintaining connected industrial devices. However, unsuccessful deployments can require troubleshooting, manual verification, escalation, and additional resolution effort.
+
+The objective of this analysis is to answer the following questions:
+
+- What percentage of firmware deployment attempts are unsuccessful?
+- Which root causes account for the most unsuccessful deployments?
+- Which device types and sites have the highest unsuccessful deployment rates?
+- How do average resolution times differ between L1 and L2 escalations?
+
+## Dataset
+
+The Excel workbook contains two datasets:
+
+- **Deployments:** Deployment attempts, dates, device and site information, firmware versions, status, error codes, root causes, escalation levels, and resolution times.
+- **Devices:** Device identifiers, site information, device types, controller versions, and installation dates.
+
+The deployment dataset contains 3,300 attempts. Of these, 2,993 were successful, 267 failed, and 40 were rolled back.
+
+*Note: The dataset is used for portfolio analysis. Findings describe the supplied dataset and should not be interpreted as verified production-system outcomes.*
+
+## Tools and Technologies
+
+- Python
+- pandas
+- Matplotlib
+- Seaborn
+- Excel
+- Visual Studio Code
+
+## Analysis Workflow
+
+1. **Data inspection:** Examined dataset dimensions, column names, data types, date ranges, and missing values.
+2. **Data validation:** Checked duplicates, device references, and consistency between deployment and device information.
+3. **Exploratory data analysis:** Calculated unsuccessful deployment counts and rates by month and year.
+4. **Data integration:** Merged deployment records with device information and validated overlapping attributes.
+5. **Comparative analysis:** Compared unsuccessful deployment rates across device types and sites.
+6. **Root-cause analysis:** Examined root-cause categories, error codes, deployment status, and escalation levels.
+7. **Resolution analysis:** Compared average resolution times across statuses and escalation levels.
+8. **Visualization:** Created charts to communicate key findings.
+
+## Key Findings
+
+- **Overall unsuccessful rate:** 307 of 3,300 attempts were unsuccessful, representing approximately 9.30%.
+- **Most frequent root cause:** Package Integrity, with 70 unsuccessful attempts.
+- **Device-type comparison:** Telemetry Unit had the highest unsuccessful rate at 11.53%, while Actuator Controller had the lowest at 6.87%.
+- **Site comparison:** Vadodara Plant had the highest unsuccessful rate at 13.33%, while Pune Plant had the lowest at 4.97%.
+- **Resolution time:** Average resolution time was approximately 2.56 hours for L1 cases and 6.16 hours for L2 cases.
+
+These findings highlight where further investigation may be useful. They do not establish the underlying causes of differences between sites, device types, or escalation levels.
+
+## Visualizations
+
+### 1. Unsuccessful Deployments by Root Cause
+
+![Root Cause Analysis](root_cause_analysis.png)
+
+### 2. Unsuccessful Deployment Rate by Device Type
+
+![Device Type Failure Rate](device_type_failure_rate.png)
+
+### 3. Unsuccessful Deployment Rate by Site
+
+![Site Failure Rate](site_failure_rate.png)
+
+### 4. Average Resolution Time by Escalation Level
+
+![Resolution Time by Escalation](resolution_time_by_escalation.png)
+
+## Project Structure
+
+```text
+iiot-firmware-deployment-analysis/
+├── data/
+│   └── Deployement+Devices.xlsx
+├── src/
+│   ├── inspectdata.py
+│   └── visualization.py
+├── root_cause_analysis.png
+├── device_type_failure_rate.png
+├── site_failure_rate.png
+├── resolution_time_by_escalation.png
+└── README.md
+```
+
+## How to Run
+
+1. Install Python.
+2. Install the required libraries:
+
+   `python -m pip install pandas matplotlib seaborn openpyxl`
+
+3. Run the analysis script from the project root:
+
+   `python src/inspectdata.py`
+
+4. Run the visualization script:
+
+   `python src/visualization.py`
+
+Ensure the workbook is available in the `data` folder and that the file paths in both scripts match the project structure.
+
+## Conclusion
+
+This project demonstrates an end-to-end Python data analysis workflow, including data quality checks, exploratory analysis, dataset integration, operational comparisons, and visualization.
+
+The analysis provides a structured view of unsuccessful firmware deployment patterns and resolution effort, helping identify areas for further operational investigation.
