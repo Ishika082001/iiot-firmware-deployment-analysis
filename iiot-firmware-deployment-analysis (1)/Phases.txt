@@ -1,0 +1,45 @@
+Phase 1 — Understand the data
+Completed
+We loaded the Excel sheets, inspected their columns, checked data types, shapes, dates, and the meaning of each table.
+
+
+
+
+Phase 2 — Data quality and validation
+Core checks completed
+We checked missing values, duplicate IDs, device references, and consistency between the two tables. We also learned why blank failure details on successful deployments are expected, rather than automatically being data errors.
+
+
+
+
+Phase 3 — Exploratory Data Analysis (EDA)
+In progress
+We have calculated overall unsuccessful deployments, identified the date range, counted deployments by month, and calculated monthly unsuccessful rates. Next, we'll validate the trend and investigate the factors associated with unsuccessful outcomes.
+
+
+
+
+Phase 4 — Combine and analyze the tables
+Join deployment history with device information using device_id. Then compare reliability across device types, sites, firmware versions, and other relevant groups.
+
+
+Phase 5 — Root-cause and operational analysis
+Investigate failure categories, error codes, rollbacks, escalation levels, manual verification time, and resolution time. Look for patterns that may help prioritize operational improvements.
+
+
+
+
+Phase 6 — Visualize the findings
+Use Matplotlib and Seaborn to create clear charts that answer specific business questions, rather than making charts just to demonstrate Python skills.
+
+
+
+
+Phase 7 — Conclusions and recommendations
+Summarize what the data supports, suggest evidence-based operational improvements, and state any limitations.
+
+
+
+
+Phase 8 — Finish the portfolio project
+Organize the Python scripts, add a README, document the business questions and findings, and prepare selected charts and resume-ready project bullets.
